@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TVL schedule</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@200;300;400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+   <header>
+        <div class="box-gradient">
+            <nav>
+                <ul class="nav_link">
+                    <li><a href="#">ตารางแข่ง</a></li>
+                    <li><a href="#">ตารางคะแนน</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav_text">
+                <h3>ตารางการแข่งขันวอลเลย์บอลไทยแลนด์ลีก TVLschedule</h3>
+                <p>Developed by @liveramade</p>
+            </div>
+        <a class="cta" href="#"><button>CONTACT</button></a>
+    </div>
+   </header>
+
+   <div class="container">
+
+    <div class="top_head">
+        <h1>ตารางแข่ง</h1>
+    </div>
+
+    <div class="top_menu">
+        <div class="li_1">
+            <ul>
+                <li><a href="#">ล่าสุด</a></li>
+                
+            </ul>
+        </div>
+        <div class="li_2">
+            <ul>
+                <li><a href="#">ทั้งหมด</a></li>
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="types_menu">
+
+        <div class="types_menu_con">
+            <div class="date_menu">
+                <input type="date">
+            </div>
+    
+            <div class="select_menu">
+                <ul>
+                    <li class="dropdown">
+                      <a href="#" data-toggle="dropdown">ประเภท<i class="icon-arrow"></i></a>
+                      <ul class="dropdown-menu">
+                        <li><a href="#">ทีมชาย</a></li>
+                        <li><a href="#">ทีมหญิง</a></li>
+                 
+                      </ul>
+                    </li>
+                </ul>
+                </div>
+            <div class="select_menu">
+                <ul>
+                    <li class="dropdown">
+                      <a href="#" data-toggle="dropdown">ทีม<i class="icon-arrow"></i></a>
+                      <ul class="dropdown-menu">
+                        <li><a href="#">มหาวิทยาลัยขอนแก่น ขอนแก่นสตาร์ </a></li>
+                        <li><a href="#">สุพรีม ทิพย ชลบุรี-อี.เทค</a></li>
+                        <li><a href="#">นครนนท์</a></li>
+                        <li><a href="#">นครราชสีมา คิวมิน ซี วีซี</a></li>
+                        <li><a href="#">อาร์เอสยู วีซี</a></li>
+                        <li><a href="#">ไดมอนด์ ฟู้ด ไฟน์เชฟ-แอร์ฟอร์ซ</a></li>
+                        <li><a href="#">แก่นนคร
+                            มหาวิทยาลัยการกีฬาแห่งชาติ วีซี</a></li>
+                        <li><a href="#">ยูเรก้า - ศรีสะเกษ วีซี</a></li>
+                 
+                      </ul>
+                    </li>
+                </ul>
+                </div>
+        </div>
+        
+        
+
+
+    </div>
+   </div>
+
+ 
+   <script>
+    var dropdown = document.querySelectorAll('.dropdown');
+var dropdownArray = Array.prototype.slice.call(dropdown,0);
+dropdownArray.forEach(function(el){
+	var button = el.querySelector('a[data-toggle="dropdown"]'),
+			menu = el.querySelector('.dropdown-menu'),
+			arrow = button.querySelector('i.icon-arrow');
+
+	button.onclick = function(event) {
+		if(!menu.hasClass('show')) {
+			menu.classList.add('show');
+			menu.classList.remove('hide');
+			arrow.classList.add('open');
+			arrow.classList.remove('close');
+			event.preventDefault();
+		}
+		else {
+			menu.classList.remove('show');
+			menu.classList.add('hide');
+			arrow.classList.remove('open');
+			arrow.classList.add('close');
+			event.preventDefault();
+		}
+	};
+})
+
+Element.prototype.hasClass = function(className) {
+    return this.className && new RegExp("(^|\\s)" + className + "(\\s|$)").test(this.className);
+};
+   </script>  
+</body>
+</html>
